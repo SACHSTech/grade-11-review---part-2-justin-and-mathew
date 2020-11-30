@@ -1,14 +1,10 @@
 package gr11review.part2;
 
+import java.io.*;
+import java.io.FileNotFoundException;
+
 public class Utility {
   public static String zipZap(String strWord){
-
-    // Create a method that for patterns like "zip" and "zap" in the string -- length-3, starting with 'z' and ending with 'p'. Return a string where for all such words, the middle letter is gone, so "zipXzap" yields "zpXzp".
-
-    // zipZap("zipXzap") → "zpXzp"
-    // zipZap("zopzop") → "zpzp"
-    // zipZap("zzzopzop") → "zzzpzp"
-    // zipZap("zzzuzoz") → "zzzuzoz"
 
     int intCount;
     String strNewWord;
@@ -30,5 +26,31 @@ public class Utility {
 
     return strNewWord;
 
+  }
+
+  public static String longestword(String filenametxt) throws FileNotFoundException, IOException{
+
+    File filename = new File(filenametxt);
+
+    BufferedReader keyboard = new BufferedReader(new FileReader(filename));
+
+    String strCurrentWord;    
+    String strLongWord;
+
+    strLongWord = "";
+    strCurrentWord = "";
+
+    strCurrentWord = keyboard.readLine();
+    while(strCurrentWord != null){
+      System.out.println(strCurrentWord);
+      System.out.println(strLongWord);
+      if(strCurrentWord.length() > strLongWord.length()){
+        strLongWord = strCurrentWord;
+      }
+      strCurrentWord = keyboard.readLine();
+      }
+      keyboard.close();
+      
+      return strLongWord;
   }
 }

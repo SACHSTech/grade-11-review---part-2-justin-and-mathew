@@ -4,13 +4,19 @@ import gr11review.part2.Utility.*;
 import java.io.*;
 
 public class Main{
-  public static void main (String[] args) throws IOException{
+  public static void main (String[] args) throws FileNotFoundException, IOException{
 
     String strMiddleRemover;
 
-    strMiddleRemover = Utility.zipZap("ziiiipzap");
+    strMiddleRemover = Utility.zipZap("zipXzap");
 
     System.out.println(strMiddleRemover);
+
+    String strLongWords;
+
+    strLongWords = Utility.longestword("words.txt");
+
+    System.out.println(strLongWords);
 
   }
 }
