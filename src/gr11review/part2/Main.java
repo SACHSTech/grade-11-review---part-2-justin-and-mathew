@@ -18,5 +18,11 @@ public class Main{
 
     System.out.println(strLongWords);
 
+    int[] intnums = {10, 1, 20, 2};
+
+    intnums = Utility.tenRun(intnums);
+
+    System.out.println(intnums);
+
   }
 }
